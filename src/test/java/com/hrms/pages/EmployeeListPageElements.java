@@ -21,6 +21,21 @@ public class EmployeeListPageElements extends BaseClass {
 	
 	@FindBy(xpath = "//table[@id='resultTable']/tbody/tr")
 	public List<WebElement> empListRows;
+	
+	@FindBy(xpath = "//table[@id='resultTable']/tbody/tr/td[2]")
+	public List<WebElement> IDs;
+	
+	@FindBy(xpath = "//table[@id='resultTable']/tbody/tr/td[1]")
+	public List<WebElement> CheckBoxes;
+	
+	@FindBy(id = "btnDelete")
+	public WebElement deleteBtn;
+	
+	@FindBy(id = "dialogDeleteBtn")
+	public WebElement okBtn;
+	
+	@FindBy(xpath = "(//a[text()='Next'])[1]")
+	public WebElement nextBtn;
 
 	public EmployeeListPageElements() {
 		PageFactory.initElements(driver, this);
