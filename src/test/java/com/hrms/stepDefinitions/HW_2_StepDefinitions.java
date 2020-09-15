@@ -17,9 +17,10 @@ public class HW_2_StepDefinitions extends CommonMethods {
 	@When("go to PIM, Add Employee")
 	public void go_to_PIM_Add_Employee() {
 		click(dashboard.pim);
-
 	}
-
+	/*
+	 * Method adds employees from excel file and given store employee ID into excel
+	 */
 	@When("add employee without login details")
 	public void add_employee_without_login_details() {
 		List<Map<String, String>> list = ExcelUtility.excelToListMap(Constants.EXCELFILE_PATH, "HW_2");
@@ -33,34 +34,38 @@ public class HW_2_StepDefinitions extends CommonMethods {
 			n++;
 			click(addEmp.save);
 		}
-
 	}
-
+	 /*
+	  * Method uses employee ID from excel file and search them inside employee list, then delete them
+	  */
 	@Then("verify if it is added")
 	public void verify_if_it_is_added() {
 		click(empList.empList);
-		boolean check = false;
-
-		for (int i = 0; i < ExcelUtility.getRowsCount(); i++) {
-
-			for (int n = 1; n < empList.IDs.size(); n++) {
-				String str = empList.IDs.get(n).getText();
-//				ExcelUtility.openExcel(Constants.EXCELFILE_PATH);
-//				ExcelUtility.getSheet("HW_2");
-
-				List<Map<String, String>> list = ExcelUtility.excelToListMap(Constants.EXCELFILE_PATH, "HW_2");
-				if (str.contains(list.get(i).get("Emp ID"))) {
-					click(empList.CheckBoxes.get(n));
-					click(empList.deleteBtn);
-					click(empList.okBtn);
-				} else {
-					click(empList.nextBtn);
+		boolean check = true;
+		String str;
+		List<Map<String, String>> list = ExcelUtility.excelToListMap(Constants.EXCELFILE_PATH, "HW_2");
+		int count = 0;
+		while (check) {
+			for (int i = 0; i < empList.IDs.size(); i++) {
+				str = empList.IDs.get(i).getText();
+				for (int n = 0; n < list.size(); n++) {
+					if (str.contains(list.get(n).get("Emp ID"))) {
+						click(empList.CheckBoxes.get(i));
+						click(empList.deleteBtn);
+						click(empList.okBtn);
+						count++;
+						i = 0;
+						break;
+					}
 				}
 			}
-
+			if (count == list.size()) {
+				check = false;
+			} else {
+				click(empList.nextBtn);
+			}
 		}
 	}
-
 	@When("add employee with login details")
 	public void add_employee_with_login_details() {
 
