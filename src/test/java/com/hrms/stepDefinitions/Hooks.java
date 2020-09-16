@@ -9,20 +9,20 @@ import io.cucumber.java.Scenario;
 
 public class Hooks {
 
-//	@Before
-//	public void startTest() {
-//		BaseClass.setUp();
-//	}
-//
-//	@After
-//	public static void endTest(Scenario scenario) {
-//		byte[] screenshot;
-//		if(scenario.isFailed()) {
-//			screenshot = CommonMethods.takeScreenshot("failed/" + scenario.getName());
-//		} else {
-//			screenshot = CommonMethods.takeScreenshot("passed/" + scenario.getName());
-//		}
-//		scenario.attach(screenshot, "image/png", scenario.getName());
-//		BaseClass.tearDown();
-//	}
+	@Before
+	public void startTest() {
+		BaseClass.setUp();
+	}
+
+	@After
+	public static void endTest(Scenario scenario) {
+		byte[] screenshot;
+		if(scenario.isFailed()) {
+			screenshot = CommonMethods.takeScreenshot("failed/" + scenario.getName());
+		} else {
+			screenshot = CommonMethods.takeScreenshot("passed/" + scenario.getName());
+		}
+		scenario.attach(screenshot, "image/png", scenario.getName());
+		BaseClass.tearDown();
+	}
 }

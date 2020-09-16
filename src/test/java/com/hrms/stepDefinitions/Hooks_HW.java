@@ -9,14 +9,14 @@ import io.cucumber.java.Scenario;
 
 public class Hooks_HW extends CommonMethods {
 
-	@Before
-	public void startTest() {
-		setUp();
-		login.login();
-	}
-
-	@After
-	public void endTest(Scenario scenario) {
-		tearDown();
-	}
+//	@Before
+//	public void startTest() {
+//		setUp();
+//		login.login();
+//	}
+//
+//	@After
+//	public void endTest(Scenario scenario) {
+//		tearDown();
+//	}
 }

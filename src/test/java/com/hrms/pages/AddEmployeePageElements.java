@@ -27,6 +27,9 @@ public class AddEmployeePageElements extends BaseClass {
 	
 	@FindBy(id = "employeeId")
 	public WebElement empId;
+	
+	@FindBy(id = "middleName")
+	public WebElement middleName;
 
 	@FindBy(id = "btnSave")
 	public WebElement save;
