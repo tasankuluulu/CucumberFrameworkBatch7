@@ -19,6 +19,9 @@ public class EmployeeListPageElements extends BaseClass {
 	@FindBy(id = "searchBtn")
 	public WebElement searchBtn;
 	
+	@FindBy(id = "empsearch_employee_name_empName")
+	public WebElement empName;
+	
 	@FindBy(xpath = "//table[@id='resultTable']/tbody/tr")
 	public List<WebElement> empListRows;
 	
