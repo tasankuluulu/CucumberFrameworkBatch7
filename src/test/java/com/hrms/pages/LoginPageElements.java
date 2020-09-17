@@ -21,7 +21,7 @@ public class LoginPageElements extends BaseClass {
 	@FindBy(id = "spanMessage")
 	public WebElement errorMsg;
 	
-	public static void login() {
+	public void login() {
 		CommonMethods.sendText(usernameTextBox, ConfigsReader.getPropValue("username"));
 		CommonMethods.sendText(passwordTextBox, ConfigsReader.getPropValue("password"));
 		CommonMethods.click(loginBtn);

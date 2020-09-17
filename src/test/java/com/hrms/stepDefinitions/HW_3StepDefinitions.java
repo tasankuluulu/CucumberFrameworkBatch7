@@ -1,5 +1,8 @@
 package com.hrms.stepDefinitions;
 
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
 import com.hrms.utils.CommonMethods;
 
 import io.cucumber.java.en.Then;
@@ -26,13 +29,21 @@ public class HW_3StepDefinitions extends CommonMethods {
 
 	@Then("click search Button")
 	public void click_search_Button() {
-		
+
 		click(empList.searchBtn);
 	}
 
 	@Then("verify if employee {string} is presented with the given employee {string}")
-	public void verify_if_employee_is_presented_with_the_given_employee(String string, String string2) throws InterruptedException {
+	public void verify_if_employee_is_presented_with_the_given_employee(String expectedId, String firstName)
+			throws InterruptedException {
 		Thread.sleep(3000);
+		boolean check = true;
+		while (check) {
+			for (WebElement id : empList.IDs) {
+				Assert.assertEquals(expectedId, id.getText());
+			}
+			click(empList.nextBtn);
+		}
 	}
 
 }
