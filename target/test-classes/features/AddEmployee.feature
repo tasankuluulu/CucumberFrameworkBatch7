@@ -22,8 +22,8 @@ Feature: Add Employee
     When enter first name as "Ahmet", middle name as "Can" and last name as "Bicer"
     Then click on save Button
     And verify that "Ahmet Can Bicer" is added successfully
-    
-	@examples
+
+  @examples
   Scenario Outline: Adding multiple employees without login details
     When enter employee "<First Name>", "<Middle Name>" and "<Last Name>"
     Then click on save Button
@@ -35,4 +35,16 @@ Feature: Add Employee
       | Hunter     | ABC         | Musoev    |
       | John       | M           | Wick      |
       | John       | F           | Kennedy   |
-      
+
+  @dtWithHeader
+  Scenario: Adding multiple employees at one execution
+    When add multiple employees and verify they are added
+      | First Name | Middle Name | Last Name |
+      | Mark       | J           | Smith     |
+      | Hunter     | ABC         | Musoev    |
+      | John       | M           | Wick      |
+      | John       | F           | Kennedy   |
+	
+	@excelTask
+  Scenario: Adding multiple employees from excel file
+    When add multiple employees from "Sample" verify they are added successfully

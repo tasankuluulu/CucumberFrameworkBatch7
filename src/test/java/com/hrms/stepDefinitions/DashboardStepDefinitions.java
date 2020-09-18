@@ -2,6 +2,7 @@ package com.hrms.stepDefinitions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import com.hrms.utils.CommonMethods;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
-
+import io.cucumber.java.en.When;
 
 public class DashboardStepDefinitions extends CommonMethods {
 	@Then("verify the following dashboard tabs")
@@ -25,14 +26,7 @@ public class DashboardStepDefinitions extends CommonMethods {
 		System.out.println(actualDashTabs);
 		Assert.assertEquals(expectedDashTabs, actualDashTabs);
 
-		for (int i = 0; i < expectedDashTabs.size(); i++) {
-			for (int n = 0; n < dashboard.dashTabs.size(); n++) {
-				if (expectedDashTabs.get(i).equals(dashboard.dashTabs.get(n).getText())) {
-					System.out.println("comparing like that");
-					break;
-				}
-
-			}
-		}
 	}
+
+
 }

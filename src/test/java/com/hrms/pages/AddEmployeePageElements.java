@@ -10,7 +10,7 @@ public class AddEmployeePageElements extends BaseClass {
 	@FindBy(xpath = "//input[@name='chkLogin']")
 	public WebElement loginDetailsCheckbox;
 	
-	@FindBy(id = "menu_pim_addEmployee")
+	@FindBy(xpath = "//a[@id='menu_pim_addEmployee']")
 	public WebElement addEmpBtn;
 
 	@FindBy(id = "firstName")
