@@ -17,7 +17,7 @@ public class JDBCDemo {
 	// jdbc:mysql://hostname:port/db name
 	String dbUrl = "jdbc:mysql://18.232.148.34:3306/syntaxhrm_mysql";
 
-//	@Test
+	@Test
 	public void newConnection() throws SQLException {
 		Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 		System.out.println("DB Connection Successful");
@@ -38,7 +38,7 @@ public class JDBCDemo {
 		conn.close();
 	}
 	
-	@Test
+//	@Test
 	public void listTask() throws SQLException {
 		Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 		System.out.println("DB Connection Successful");
