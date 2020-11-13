@@ -4,24 +4,19 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.http.entity.ContentType;
 import org.junit.Assert;
-import org.testng.asserts.SoftAssert;
 
 import com.hrms.utils.APICommonMethods;
 import com.hrms.utils.APIConstants;
-import com.hrms.utils.APIPayloadCommonMethods;
 import com.hrms.utils.CommonMethods;
 
 public class APIFinalSteps extends CommonMethods {
