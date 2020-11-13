@@ -23,13 +23,13 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 
 	@Then("enter first and last name")
 	public void enter_first_and_last_name() {
-		sendText(addEmp.firstName, "John");
-		sendText(addEmp.lastName, "Wick");
+		sendText(addEmp.firstNameTextBox, "John");
+		sendText(addEmp.lastNameTextBox, "Wick");
 	}
 
 	@Then("click on save Button")
 	public void click_on_save_Button() {
-		click(addEmp.save);
+		click(addEmp.saveBtn);
 	}
 
 	@Then("verify the employee is added successfully")
@@ -40,8 +40,8 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 	@When("enter first name as {string}, middle name as {string} and last name as {string}")
 	public void enter_first_name_as_middle_name_as_and_last_name_as(String firstName, String middleName,
 			String lastName) {
-		sendText(addEmp.firstName, firstName);
-		sendText(addEmp.lastName, lastName);
+		sendText(addEmp.firstNameTextBox, firstName);
+		sendText(addEmp.lastNameTextBox, lastName);
 		sendText(addEmp.middleName, middleName);
 	}
 
@@ -52,8 +52,8 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 
 	@When("enter employee {string}, {string} and {string}")
 	public void enter_employee_and(String firstName, String middleName, String lastName) {
-		sendText(addEmp.firstName, firstName);
-		sendText(addEmp.lastName, lastName);
+		sendText(addEmp.firstNameTextBox, firstName);
+		sendText(addEmp.lastNameTextBox, lastName);
 		sendText(addEmp.middleName, middleName);
 	}
 
@@ -73,12 +73,12 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 			String middleName = employeeName.get("Middle Name");
 			String lastName = employeeName.get("Last Name");
 
-			sendText(addEmp.firstName, firstName);
+			sendText(addEmp.firstNameTextBox, firstName);
 			sendText(addEmp.middleName, middleName);
-			sendText(addEmp.lastName, lastName);
+			sendText(addEmp.lastNameTextBox, lastName);
 
 			sendText(addEmp.empId, Double.toString(Math.random()));
-			click(addEmp.save);
+			click(addEmp.saveBtn);
 			String fullName = firstName + " " + middleName + " " + lastName;
 			String fullProfileName = addEmp.empInfo.getText();
 			Assert.assertEquals(fullName, fullProfileName);
@@ -94,12 +94,12 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 			String middleName = map.get("MiddleName");
 			String lastName = map.get("LastName");
 
-			sendText(addEmp.firstName, firstName);
+			sendText(addEmp.firstNameTextBox, firstName);
 			sendText(addEmp.middleName, middleName);
-			sendText(addEmp.lastName, lastName);
+			sendText(addEmp.lastNameTextBox, lastName);
 
 			sendText(addEmp.empId, Double.toString(Math.random()));
-			click(addEmp.save);
+			click(addEmp.saveBtn);
 			String fullName = firstName + " " + middleName + " " + lastName;
 			String fullProfileName = addEmp.empInfo.getText();
 			Assert.assertEquals(fullName, fullProfileName);

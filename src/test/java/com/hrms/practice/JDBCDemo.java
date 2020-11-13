@@ -23,6 +23,9 @@ public class JDBCDemo {
 		System.out.println("DB Connection Successful");
 		Statement st = conn.createStatement();
 		ResultSet rs = st.executeQuery("select * from hs_hr_employees");
+		st.executeBatch();
+		st.execute("");
+		st.executeQuery("");
 		rs.next();
 		String firstname = rs.getString("emp_firstname");
 		System.out.println(firstname);

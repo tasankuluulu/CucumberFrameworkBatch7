@@ -27,12 +27,12 @@ public class HW_2_StepDefinitions extends CommonMethods {
 		int n = 1;
 		for (Map<String, String> element : list) {
 			click(addEmp.addEmpBtn);
-			sendText(addEmp.firstName, element.get("FirstName"));
-			sendText(addEmp.lastName, element.get("LastName"));
+			sendText(addEmp.firstNameTextBox, element.get("FirstName"));
+			sendText(addEmp.lastNameTextBox, element.get("LastName"));
 			ExcelUtility.saveIntoExcel(Constants.EXCELFILE_PATH, "HW_2", n, 5, addEmp.empId.getAttribute("value"),
 					Constants.EXCELFILE_PATH);
 			n++;
-			click(addEmp.save);
+			click(addEmp.saveBtn);
 		}
 	}
 	 /*

@@ -14,16 +14,16 @@ public class AddEmployeePageElements extends BaseClass {
 	public WebElement addEmpBtn;
 
 	@FindBy(id = "firstName")
-	public WebElement firstName;
+	public WebElement firstNameTextBox;
 
 	@FindBy(id = "lastName")
-	public WebElement lastName;
+	public WebElement lastNameTextBox;
 
 	@FindBy(id = "user_name")
-	public WebElement username;
+	public WebElement usernameTextBox;
 
 	@FindBy(id = "user_password")
-	public WebElement password;
+	public WebElement passwordTextBox;
 	
 	@FindBy(id = "employeeId")
 	public WebElement empId;
@@ -32,13 +32,13 @@ public class AddEmployeePageElements extends BaseClass {
 	public WebElement middleName;
 
 	@FindBy(id = "btnSave")
-	public WebElement save;
+	public WebElement saveBtn;
 
 	@FindBy(xpath = "//div[@id='profile-pic']/h1")
 	public WebElement FullName;
 
 	@FindBy(id = "re_password")
-	public WebElement confirmPassword;
+	public WebElement confirmPasswordBtn;
 	
 	@FindBy(xpath = "//div[@id='profile-pic']/h1")
 	public WebElement empInfo;
