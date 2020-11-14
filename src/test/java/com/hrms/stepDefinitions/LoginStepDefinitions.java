@@ -31,14 +31,14 @@ public class LoginStepDefinitions extends CommonMethods {
 //		tearDown();
 //	}
 
-	@When("login with invalid credentials")
-	public void login_with_invalid_credentials() {
-		login.login("Admin", "Password");
-	}
-
-	@Then("varify the error message")
-	public void varify_the_error_message() {
-		Assert.assertEquals(login.ERROR_MESSAGE_INVALID_CREDENTIALS, login.errorMsg.getText());
-	}
+//	@When("login with invalid credentials")
+//	public void login_with_invalid_credentials() {
+//		login.login("Admin", "Password");
+//	}
+//
+//	@Then("varify the error message")
+//	public void varify_the_error_message() {
+//		Assert.assertEquals(login.ERROR_MESSAGE_INVALID_CREDENTIALS, login.errorMsg.getText());
+//	}
 
 }
