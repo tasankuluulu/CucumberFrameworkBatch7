@@ -33,7 +33,7 @@ public class LoginStepDefinitions extends CommonMethods {
 
 	@When("login with invalid credentials")
 	public void login_with_invalid_credentials() {
-//		login.login("Admin", "Password");
+		login.login("Admin", "Password");
 	}
 
 	@Then("varify the error message")
