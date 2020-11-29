@@ -18,7 +18,7 @@ public class LoginStepDefinitions extends CommonMethods {
 
 	@When("login with valid credentials")
 	public void login_with_valid_credentials() {
-		login.login();
+//		login.login();
 	}
 
 	@When("verify the dashboard is displayed")
