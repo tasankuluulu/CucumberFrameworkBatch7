@@ -1,5 +1,6 @@
 Feature: Login Functionality
 
+@smoke
   Scenario: Login with valid credentials
     #Given go to HRMS login page
     When login with valid credentials
